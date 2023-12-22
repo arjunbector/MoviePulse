@@ -13,8 +13,7 @@ export default function Home() {
   };
 
   const handleKeyUp = (event) => {
-    console.log(event.key)
-    if(event.key === "Enter"){
+    if(event.key === "Enter" && userInput){
       router.push(`/results/${userInput}`)
     }
   };
@@ -34,7 +33,7 @@ export default function Home() {
           />
           <Link
           className="bg-red-500 w-10"
-          href={`/results/${userInput}`}
+          href={!userInput ? "/" : `/results/${userInput}`}
           >
             <span >
               <FaMagnifyingGlass className="text-[#111111] absolute right-2 top-3" />
