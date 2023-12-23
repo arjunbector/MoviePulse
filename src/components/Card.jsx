@@ -1,15 +1,31 @@
-import React from 'react'
+import React from "react";
 
-const Card = () => {
+const Card = (props) => {
   return (
-    <div className='card'>
-      <div className='imaage-div'></div>
+    <div className="card h-80 w-40 bg-[#3F3F3F] flex flex-col rounded-lg overflow-hidden cursor-pointer">
+      <div className="image-div h-4/6 min-h-[66.6%] w-full">
+        <img
+          className="w-full h-full"
+          src={props.poster}
+          alt="poster"
+        />
+      </div>
+      <div className="flex flex-col h-full justify-between">
+        <div className="title p-1 text-wrap leading-4">
+          <h6>
+            {props.title}
+          </h6>
+        </div>
+        <div className="w-full text-slate-200 opacity-75 text-sm flex justify-between p-1">
+          <p>{props.type}</p>
+          <p>{props.year}</p>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
-
+export default Card;
 
 // {Poster: "https://m.media-amazon.com/images/M/MV5BM2ZmMjEyZmYtOGM4YS00YTNhLWE3ZDMtNzQxM2RhNjBlODIyXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_SX300.jpg",
 // Title: "Wednesday",
