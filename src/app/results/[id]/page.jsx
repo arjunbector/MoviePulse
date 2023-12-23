@@ -1,6 +1,7 @@
 "use client";
 import Card from "@/components/Card";
 import Navbar from "@/components/Navbar";
+import SkeletonCard from "@/components/SkeletonCard";
 import { useEffect, useState } from "react";
 
 const Result = ({ params }) => {
@@ -38,13 +39,14 @@ const Result = ({ params }) => {
       });
   }, []);
 
+  const skeletonCards = Array(10).fill(<SkeletonCard/>)
   return (
     <>
       <Navbar />
       <main className="min-h-[100vh] bg-[#0F0F0F] text-white flex flex-col items-center">
         <h1 className="text-[2rem] font-bold my-5">Search results for {userInput}</h1>
         <div className="flex gap-16 flex-wrap px-10 justify-center ">
-          {dataArray}
+          {isLoading ? skeletonCards : dataArray}
         </div>
       </main>
     </>
