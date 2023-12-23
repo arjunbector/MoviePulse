@@ -43,10 +43,10 @@ const Result = ({ params }) => {
   const skeletonCards = Array(10).fill(<SkeletonCard/>)
   return (
     <>
-      <Navbar />
+      <Navbar userInput={userInput}/>
       <main className="min-h-[100vh] bg-[#0F0F0F] text-white flex flex-col items-center">
         <h1 className="text-[2rem] font-bold my-5">Search results for {userInput}</h1>
-        <div className="flex gap-16 flex-wrap px-10 justify-center ">
+        <div className="grid grid-cols-5 gap-16 px-10 mb-10">
           {isLoading ? skeletonCards : (error ? "No movies found" : dataArray)}
         </div>
       </main>

@@ -7,9 +7,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 
-const Navbar = () => {
+const Navbar = (props) => {
   const router = useRouter();
-  const [userInput, setUserInput] = useState("");
+  const [userInput, setUserInput] = useState(props.userInput);
   const handleInputChange = (event) => {
     setUserInput(event.target.value);
   };
