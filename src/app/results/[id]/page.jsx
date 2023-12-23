@@ -45,8 +45,8 @@ const Result = ({ params }) => {
     <>
       <Navbar userInput={userInput}/>
       <main className="min-h-[100vh] bg-[#0F0F0F] text-white flex flex-col items-center">
-        <h1 className="text-[2rem] font-bold my-5">Search results for {userInput}</h1>
-        <div className="grid grid-cols-5 gap-16 px-10 mb-10">
+        <h1 className="text-[5vb] font-bold my-5 text-center">Search results for {userInput}</h1>
+        <div className="grid grid-cols-1 gap-16 px-10 mb-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
           {isLoading ? skeletonCards : (error ? "No movies found" : dataArray)}
         </div>
       </main>
