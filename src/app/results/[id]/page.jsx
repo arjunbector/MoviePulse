@@ -24,6 +24,7 @@ const Result = ({ params }) => {
         const cardsArr = data.Search.map((movie) => {
           return (
             <Card
+            key={movie.imdbID}
               title={movie.Title}
               type={movie.Type}
               year={movie.Year}
@@ -46,7 +47,7 @@ const Result = ({ params }) => {
       <main className="min-h-[100vh] bg-[#0F0F0F] text-white flex flex-col items-center">
         <h1 className="text-[2rem] font-bold my-5">Search results for {userInput}</h1>
         <div className="flex gap-16 flex-wrap px-10 justify-center ">
-          {isLoading ? skeletonCards : dataArray}
+          {isLoading ? skeletonCards : (error ? "No movies found" : dataArray)}
         </div>
       </main>
     </>
