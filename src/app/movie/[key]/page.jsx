@@ -34,20 +34,20 @@ const Movie = ({ params }) => {
         <Loading />
       ) : (
         <div>
-          <div className="flex justify-between items-start px-12">
+          <div className="flex justify-between items-start px-5 sm:px-12">
             <div className="left flex flex-col items-start">
-              <div className=" text-[4rem]">{data.Title}</div>
-              <div className="px-3">
+              <div className="text-[2rem] sm:text-[4rem] leading-none">{data.Title}</div>
+              <div className="text-xs sm:text-lg">
                 <span>{data.Year}</span>
                 <span> . </span>
                 <span>{data.Runtime}</span>
               </div>
             </div>
-            <div className="my-4">
+            <div>
               <Link href={`https://www.imdb.com/title/${params.key}/`}>
-                <div className="imbd-card leading-1">
+                <div className="imbd-card leading-1 text-sm sm:text-md">
                   IMBD Rating
-                  <div className="leading-1 my-[-3px]">
+                  <div className="leading-none text-xs sm:text-md">
                     <span className="font-bold leading-1">
                       {data.imdbRating}{" "}
                     </span>
@@ -59,16 +59,16 @@ const Movie = ({ params }) => {
             </div>
           </div>
 
-          <div className="flex justify-around items-center">
-            <div className="poster h-[70vh] p-3 w-[50vb]">
+          <div className="flex flex-col sm:flex-row justify-around items-center">
+            <div className="poster h-[50vh] sm:h-[70vh] p-3 w-p[40vh] sm:w-[50vb] flex justify-center">
               {image ? (
-                <img className="h-full" src={image} alt="poster" />
+                <img className="w-full sm:h-full sm:w-auto" src={image} alt="poster" />
               ) : (
                 "loading..."
               )}
             </div>
 
-            <div className="right w-4/6">
+            <div className="right w-full px-10 sm:px-0 sm:w-4/6">
               <p>{data.Plot}</p>
               <div className="line h-[1px] w-full bg-slate-300 opacity-40 my-1"></div>
               <p>
