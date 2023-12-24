@@ -33,7 +33,7 @@ const Movie = ({ params }) => {
         <Loading />
       ) : (
         <div>
-          <div className="flex justify-between items-start px-2 sm:px-12 gap-1">
+          <div className="flex justify-between items-start px-2 sm:px-12 gap-1 mt-8">
             <div className="left flex flex-col items-start w-4/5">
               <div className="text-[1.8rem] sm:text-[4rem] leading-none">
                 {data.Title}
