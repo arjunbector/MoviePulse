@@ -6,7 +6,6 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-
 const Navbar = (props) => {
   const router = useRouter();
   const [userInput, setUserInput] = useState(props.userInput);
@@ -21,17 +20,16 @@ const Navbar = (props) => {
   };
   const pathname = usePathname();
   return (
-    <nav className="w-full h-[10vh] flex justify-between px-8 py-5 items-center bg-[#0F0F0F] text-white">
+    <nav className="w-full h-[15vh] sm:h-[10vh] flex flex-col sm:flex-row justify-between px-8 py-5 items-center bg-[#0F0F0F] text-white">
       <div className="flex gap-8">
-        <div className="font-bold ">
-          <span className="text-[#FF0000]">Movies</span>
-          <span>Pulse</span>
-        </div>
-        <div className="flex gap-5">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/"}>Search</Link>
-          <Link href={"/"}>Latest</Link>
-        </div>
+        <Link 
+        href={"/"}>
+          <div className="font-bold ">
+            <span className="text-[#FF0000]">Movies</span>
+            <span>Pulse</span>
+          </div>
+        </Link>
+        <div className="flex gap-5"></div>
       </div>
       <div className="flex gap-2 align-center">
         {!(pathname == "/") && (
@@ -50,7 +48,6 @@ const Navbar = (props) => {
             </Link>
           </div>
         )}
-        <Button text={"Login"} />
       </div>
     </nav>
   );
