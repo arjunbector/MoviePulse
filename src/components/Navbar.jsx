@@ -20,7 +20,7 @@ const Navbar = (props) => {
   };
   const pathname = usePathname();
   return (
-    <nav className="w-full h-[15vh] sm:h-[10vh] flex flex-col sm:flex-row justify-between px-8 py-5 items-center bg-[#0F0F0F] text-white">
+    <nav className="w-full h-[11vh] sm:h-[10vh] flex flex-col sm:flex-row justify-between px-8 py-5 items-center bg-[#0F0F0F] text-white">
       <div>
         <Link 
         href={"/"}>
