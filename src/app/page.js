@@ -22,6 +22,7 @@ export default function Home() {
     <main className="bg-[#0F0F0F] flex flex-col items-center">
       <Navbar />
       <section className="min-h-[90vh] w-full flex flex-col items-center justify-center">
+        <h1 className="text-slate-200 text-[5vw] mb-3 sm:mb-6 text-wrap text-center">Your Movie Search Ends Here</h1>
         <div className="w-[80%] pb-10 relative flex align-center">
           <input
             placeholder="Search your movie here"
