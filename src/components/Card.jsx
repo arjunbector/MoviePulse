@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = (props) => {
   return (
-    <div className="card h-80 w-40 bg-[#3F3F3F] flex flex-col rounded-lg overflow-hidden cursor-pointer">
+    <div className="card sm:h-80 w-60 sm:w-40 bg-[#3F3F3F] flex flex-col rounded-lg overflow-hidden cursor-pointer">
       <div className="image-div h-4/6 min-h-[66.6%] w-full">
         <img
           className="w-full h-full"

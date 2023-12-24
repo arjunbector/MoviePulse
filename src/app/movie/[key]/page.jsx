@@ -61,10 +61,10 @@ const Movie = ({ params }) => {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-around items-center">
-            <div className="poster h-[50vh] sm:h-[70vh] p-3 w-p[40vh] sm:w-[50vb] flex justify-center">
+            <div className="poster h-[50vh] sm:h-[70vh] p-3 flex justify-center">
               {image ? (
                 <img
-                  className="w-full sm:h-full sm:w-auto"
+                  className="h-full sm:h-full sm:w-auto"
                   src={image}
                   alt="poster"
                 />
