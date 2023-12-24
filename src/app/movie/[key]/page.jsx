@@ -16,14 +16,12 @@ const Movie = ({ params }) => {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        console.log(data);
         setIsLoading(false);
       });
 
     setImage(
       `http://img.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_API_KEY}&i=${params.key}`
     );
-    console.log(data);
   }, []);
   return (
     <main className="min-h-[100vh] bg-[#0F0F0F] text-white p-2">
