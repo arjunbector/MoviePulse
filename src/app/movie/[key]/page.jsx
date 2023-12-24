@@ -8,7 +8,6 @@ import Loading from "@/components/Loading";
 const Movie = ({ params }) => {
   const [data, setData] = useState({});
   const [image, setImage] = useState("");
-  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetch(
@@ -36,7 +35,9 @@ const Movie = ({ params }) => {
         <div>
           <div className="flex justify-between items-start px-5 sm:px-12">
             <div className="left flex flex-col items-start">
-              <div className="text-[2rem] sm:text-[4rem] leading-none">{data.Title}</div>
+              <div className="text-[2rem] sm:text-[4rem] leading-none">
+                {data.Title}
+              </div>
               <div className="text-xs sm:text-lg">
                 <span>{data.Year}</span>
                 <span> . </span>
@@ -62,7 +63,11 @@ const Movie = ({ params }) => {
           <div className="flex flex-col sm:flex-row justify-around items-center">
             <div className="poster h-[50vh] sm:h-[70vh] p-3 w-p[40vh] sm:w-[50vb] flex justify-center">
               {image ? (
-                <img className="w-full sm:h-full sm:w-auto" src={image} alt="poster" />
+                <img
+                  className="w-full sm:h-full sm:w-auto"
+                  src={image}
+                  alt="poster"
+                />
               ) : (
                 "loading..."
               )}
@@ -103,6 +108,14 @@ const Movie = ({ params }) => {
               <p>
                 <span className="font-bold">Earnings- </span> {data.BoxOffice}
               </p>
+              <div className="text-center">
+                <Link
+                href={`https://www.imdb.com/title/${params.key}/`}>
+                  <button className="m-4 border p-1 rounded-md hover:scale-110 transition-all">
+                    View on IMBD
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
