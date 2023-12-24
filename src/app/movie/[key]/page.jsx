@@ -33,9 +33,9 @@ const Movie = ({ params }) => {
         <Loading />
       ) : (
         <div>
-          <div className="flex justify-between items-start px-5 sm:px-12">
-            <div className="left flex flex-col items-start">
-              <div className="text-[2rem] sm:text-[4rem] leading-none">
+          <div className="flex justify-between items-start px-2 sm:px-12 gap-1">
+            <div className="left flex flex-col items-start w-4/5">
+              <div className="text-[1.8rem] sm:text-[4rem] leading-none">
                 {data.Title}
               </div>
               <div className="text-xs sm:text-lg">
@@ -46,7 +46,7 @@ const Movie = ({ params }) => {
             </div>
             <div>
               <Link href={`https://www.imdb.com/title/${params.key}/`}>
-                <div className="imbd-card leading-1 text-sm sm:text-md">
+                <div className="imbd-card leading-1 text-xs sm:text-md">
                   IMBD Rating
                   <div className="leading-none text-xs sm:text-md">
                     <span className="font-bold leading-1">
@@ -73,7 +73,7 @@ const Movie = ({ params }) => {
               )}
             </div>
 
-            <div className="right w-full px-10 sm:px-0 sm:w-4/6">
+            <div className="right w-full px-10 sm:px-0 sm:w-4/6 mt-2 sm:mt-0">
               <p>{data.Plot}</p>
               <div className="line h-[1px] w-full bg-slate-300 opacity-40 my-1"></div>
               <p>
