@@ -2,6 +2,7 @@
 import Card from "@/components/Card";
 import Navbar from "@/components/Navbar";
 import SkeletonCard from "@/components/SkeletonCard";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Result = ({ params }) => {
@@ -23,13 +24,14 @@ const Result = ({ params }) => {
         setIsLoading(false);
         const cardsArr = data.Search.map((movie) => {
           return (
-            <Card
-            key={movie.imdbID}
-              title={movie.Title}
-              type={movie.Type}
-              year={movie.Year}
-              poster={movie.Poster}
-            />
+            <Link key={movie.imdbID} href={`/movie/${movie.imdbID}`}>
+              <Card
+                title={movie.Title}
+                type={movie.Type}
+                year={movie.Year}
+                poster={movie.Poster}
+              />
+            </Link>
           );
         });
         setDataArray(cardsArr);
@@ -40,14 +42,16 @@ const Result = ({ params }) => {
       });
   }, []);
 
-  const skeletonCards = Array(10).fill(<SkeletonCard/>)
+  const skeletonCards = Array(10).fill(<SkeletonCard />);
   return (
     <>
-      <Navbar userInput={userInput}/>
+      <Navbar userInput={userInput} />
       <main className="min-h-[100vh] bg-[#0F0F0F] text-white flex flex-col items-center">
-        <h1 className="text-[5vb] font-bold my-5 text-center">Search results for {userInput}</h1>
+        <h1 className="text-[5vb] font-bold my-5 text-center">
+          Search results for {userInput}
+        </h1>
         <div className="grid grid-cols-1 gap-16 px-10 mb-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
-          {isLoading ? skeletonCards : (error ? "No movies found" : dataArray)}
+          {isLoading ? skeletonCards : error ? "No movies found" : dataArray}
         </div>
       </main>
     </>
