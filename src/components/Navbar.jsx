@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import Button from "./Button";
 import { usePathname } from "next/navigation";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useState } from "react";
@@ -24,7 +23,7 @@ const Navbar = (props) => {
       <div>
         <Link 
         href={"/"}>
-          <div className="font-bold ">
+          <div className="font-bold text-[4vh]">
             <span className="text-[#FF0000]">Movies</span>
             <span>Pulse</span>
           </div>
@@ -36,7 +35,7 @@ const Navbar = (props) => {
           <div className="relative">
             {" "}
             <input
-              className=" focus:outline-none text-black p-1 text-sm rounded-md pr-8"
+              className=" focus:outline-none text-black p-1 text-lg sm:text-sm rounded-md pr-8"
               type="text"
               placeholder="Search"
               value={userInput}
