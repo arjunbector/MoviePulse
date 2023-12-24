@@ -21,7 +21,7 @@ const Navbar = (props) => {
   const pathname = usePathname();
   return (
     <nav className="w-full h-[15vh] sm:h-[10vh] flex flex-col sm:flex-row justify-between px-8 py-5 items-center bg-[#0F0F0F] text-white">
-      <div className="flex gap-8">
+      <div>
         <Link 
         href={"/"}>
           <div className="font-bold ">
