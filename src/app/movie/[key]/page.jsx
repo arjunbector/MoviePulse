@@ -4,6 +4,7 @@ import imbdRatingConverter from "@/utils/imbdRatingConverter";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Loading from "@/components/Loading";
 const Movie = ({ params }) => {
   const [data, setData] = useState({});
   const [image, setImage] = useState("");
@@ -27,9 +28,10 @@ const Movie = ({ params }) => {
   }, []);
   return (
     <main className="min-h-[100vh] bg-[#0F0F0F] text-white p-2">
-      <Navbar/>
+      <Navbar />
+
       {isLoading ? (
-        "loading..."
+        <Loading />
       ) : (
         <div>
           <div className="flex justify-between items-start px-12">
@@ -42,19 +44,18 @@ const Movie = ({ params }) => {
               </div>
             </div>
             <div className="my-4">
-              
-                <Link href={`https://www.imdb.com/title/${params.key}/`}>
-                  <div className="imbd-card leading-1">
-                    IMBD Rating
-                    <div className="leading-1 my-[-3px]">
-                      <span className="font-bold leading-1">
-                        {data.imdbRating}{" "}
-                      </span>
-                      / 10
-                    </div>
-                    {imbdRatingConverter(data.imdbVotes) + " votes"}
+              <Link href={`https://www.imdb.com/title/${params.key}/`}>
+                <div className="imbd-card leading-1">
+                  IMBD Rating
+                  <div className="leading-1 my-[-3px]">
+                    <span className="font-bold leading-1">
+                      {data.imdbRating}{" "}
+                    </span>
+                    / 10
                   </div>
-                </Link>
+                  {imbdRatingConverter(data.imdbVotes) + " votes"}
+                </div>
+              </Link>
             </div>
           </div>
 
