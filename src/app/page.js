@@ -29,7 +29,7 @@ export default function Home() {
             value={userInput}
             onChange={handleInputChange}
             onKeyUp={handleKeyUp}
-            className="all-none w-full h-10 p-2 focus:outline-none"
+            className="all-none w-full h-10 p-2 focus:outline-none bg-neutral-700 text-neutral-100"
             type="text"
           />
           <Link

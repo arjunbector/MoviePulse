@@ -35,7 +35,7 @@ const Navbar = (props) => {
           <div className="relative">
             {" "}
             <input
-              className=" focus:outline-none text-black p-1 text-lg sm:text-sm rounded-md pr-8"
+              className=" focus:outline-none p-1 text-lg sm:text-sm rounded-md pr-8 bg-neutral-700 text-neutral-100"
               type="text"
               placeholder="Search"
               value={userInput}
@@ -43,7 +43,7 @@ const Navbar = (props) => {
               onKeyUp={handleKeyUp}
             />
             <Link href={!userInput ? "" : `/results/${userInput}`}>
-              <FaMagnifyingGlass className="text-[#111111] absolute right-2 top-2" />
+              <FaMagnifyingGlass className="text-neutral-100 absolute right-2 top-2" />
             </Link>
           </div>
         )}
