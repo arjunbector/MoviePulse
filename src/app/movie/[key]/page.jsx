@@ -45,7 +45,7 @@ const Movie = ({ params }) => {
             <div>
               <Link href={`https://www.imdb.com/title/${params.key}/`}>
                 <div className="imbd-card leading-1 text-xs sm:text-md">
-                  IMBD Rating
+                  IMDB Rating
                   <div className="leading-none text-xs sm:text-md">
                     <span className="font-bold leading-1">
                       {data.imdbRating}{" "}
@@ -110,7 +110,7 @@ const Movie = ({ params }) => {
                 <Link
                 href={`https://www.imdb.com/title/${params.key}/`}>
                   <button className="m-4 border p-1 rounded-md hover:scale-110 transition-all">
-                    View on IMBD
+                    View on IMDB
                   </button>
                 </Link>
               </div>
