@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Loading from "@/components/Loading";
+import Loader from "@/components/Loader";
 const Movie = ({ params }) => {
   const [data, setData] = useState({});
   const [image, setImage] = useState("");
@@ -28,7 +29,7 @@ const Movie = ({ params }) => {
       <Navbar />
 
       {isLoading ? (
-        <Loading />
+        <Loader/>
       ) : (
         <div>
           <div className="flex justify-between items-start px-2 sm:px-12 gap-1 mt-8">

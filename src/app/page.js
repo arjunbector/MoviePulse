@@ -4,8 +4,10 @@ import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Loader from "@/components/Loader";
 
 export default function Home() {
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const [userInput, setUserInput] = useState("");
   const handleInputChange = (event) => {
@@ -13,16 +15,19 @@ export default function Home() {
   };
 
   const handleKeyUp = (event) => {
-    if(event.key === "Enter" && userInput){
-      router.push(`/results/${userInput}`)
+    if (event.key === "Enter" && userInput) {
+      router.push(`/results/${userInput}`);
     }
   };
 
   return (
     <main className="bg-[#0F0F0F] flex flex-col items-center">
       <Navbar />
+      {loading && <Loader />}
       <section className="min-h-[90vh] w-full flex flex-col items-center justify-center">
-        <h1 className="text-slate-200 text-[5vw] mb-3 sm:mb-6 text-wrap text-center">Your Movie Search Ends Here</h1>
+        <h1 className="text-slate-200 text-[5vw] mb-3 sm:mb-6 text-wrap text-center">
+          Your Movie Search Ends Here
+        </h1>
         <div className="w-[80%] pb-10 relative flex align-center">
           <input
             placeholder="Search your movie here"
@@ -33,10 +38,10 @@ export default function Home() {
             type="text"
           />
           <Link
-          className="bg-red-500 w-10"
-          href={!userInput ? "/" : `/results/${userInput}`}
+            className="bg-red-500 w-10"
+            href={!userInput ? "/" : `/results/${userInput}`}
           >
-            <span >
+            <span>
               <FaMagnifyingGlass className="text-[#111111] absolute right-2 top-3" />
             </span>
           </Link>
